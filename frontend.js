@@ -4,13 +4,19 @@
 
     store.state = initialState;
     store.listeners = [];
-    store.subscribe = (listener) => store.listeners.push(listener);
-    store.dispatch = (action) => {
+
+    store.subscribe = function (listener) {
+      return store.listeners.push(listener);
+    };
+
+    store.dispatch = function (action) {
       store.state = reducer(store.state, action);
       store.listeners.forEach((listener) => listener(action));
     };
 
-    store.getState = () => store.state;
+    store.getState = function () {
+      return store.state;
+    };
 
     return store;
   }
@@ -56,7 +62,12 @@
     toggleHandler.innerHTML = `Toggle ${currentCounter}`;
   }
 
+  function dummy(action) {
+    console.log("CURRENT ACTION DISPATCHED ********* ", action);
+  }
+
   myStore.subscribe(updateInterface);
+  myStore.subscribe(dummy);
 
   const incHandler = document.getElementById("increment");
   const decHandler = document.getElementById("decrement");
