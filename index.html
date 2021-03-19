@@ -19,21 +19,21 @@
       integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
       crossorigin="anonymous"
     />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body style="padding: 40px">
-    <h3 id="header">JavaScript C&C COUNTER</h3>
-    <h2 id="counter">0</h2>
+    <div id="root"></div>
 
-    <h2 id="counter2">0</h2>
-
-    <button class="btn btn-primary" id="increment" style="margin-right: 20px">
-      INCREMENT
-    </button>
-    <button class="btn btn-danger" id="decrement">DECREMENT</button>
-    <br />
-    <br />
-    <button class="btn btn-info" id="toggle">TOGGLE</button>
-    <script src="./frontend.js"></script>
+    <script type="text/babel" src="./frontend.js"></script>
   </body>
 </html>
